@@ -3,12 +3,12 @@ package grafana
 import "strings"
 
 type Row struct {
-	Collapse  bool    `json:"collapse"`
-	Editable  bool    `json:"editable"`
-	Height    string  `json:"height"`
-	Panels    []Panel `json:"panels"`
-	ShowTitle bool    `json:"showTitle"`
-	Title     string  `json:"title"`
+	Collapse  bool          `json:"collapse"`
+	Editable  bool          `json:"editable"`
+	Height    string        `json:"height"`
+	Panels    []interface{} `json:"panels"`
+	ShowTitle bool          `json:"showTitle"`
+	Title     string        `json:"title"`
 }
 
 func NewDefaultRow(title string) Row {
@@ -31,7 +31,7 @@ func (r *Row) SetHeight(h string) *Row {
 	return r
 }
 
-func (r *Row) AddPanel(p Panel) *Row {
+func (r *Row) AddPanel(p interface{}) *Row {
 	r.Panels = append(r.Panels, p)
 	return r
 }
