@@ -110,7 +110,18 @@ func (l *Legend) EnableTotal() *Legend {
 func (l *Legend) DisableTotal() *Legend {
 	l.Total = false
 	return l
+}
 
+func (l *Legend) EnableLegend() *Legend {
+	l.Show = true
+	l.Values = true
+	return l
+}
+
+func (l *Legend) DisableLegend() *Legend {
+	l.Show = false
+	l.Values = true
+	return l
 }
 
 func NewGraphPanel(title string) GraphPanel {
@@ -128,6 +139,7 @@ func NewGraphPanel(title string) GraphPanel {
 		"short",
 	}
 	p.Title = title
+	p.Legend.EnableLegend()
 	return p
 }
 
