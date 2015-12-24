@@ -76,3 +76,8 @@ func (p *SingleStatPanel) SetSpanWidth(width int) *SingleStatPanel {
 	p.Span = width
 	return p
 }
+
+func (p *SingleStatPanel) SetFormat(format string) *SingleStatPanel {
+	p.Format = format
+	return p
+}

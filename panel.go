@@ -165,3 +165,13 @@ func (p *GraphPanel) SetSpanWidth(width int) *GraphPanel {
 	p.Span = width
 	return p
 }
+
+func (p *GraphPanel) SetLeftYFormat(format string) *GraphPanel {
+	p.YFormats[0] = format
+	return p
+}
+
+func (p *GraphPanel) SetRightYFormat(format string) *GraphPanel {
+	p.YFormats[1] = format
+	return p
+}
