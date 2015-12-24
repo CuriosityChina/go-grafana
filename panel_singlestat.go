@@ -60,7 +60,7 @@ func NewSingleStatPanel(title string) SingleStatPanel {
 	return p
 }
 
-func (p *SingleStatPanel) SetDataSource(ds string) *SingleStatPanel {
+func (p *SingleStatPanel) SetDatasource(ds string) *SingleStatPanel {
 	p.Datasource = ds
 	return p
 }
