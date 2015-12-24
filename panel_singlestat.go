@@ -8,6 +8,7 @@ type SingleStatPanel struct {
 	Datasource      interface{}   `json:"datasource"`
 	Editable        bool          `json:"editable"`
 	Error           bool          `json:"error"`
+	Decimals        int           `json:"decimals"`
 	Format          string        `json:"format"`
 	ID              int           `json:"id"`
 	Interval        interface{}   `json:"interval,omitempty"`
@@ -79,5 +80,13 @@ func (p *SingleStatPanel) SetSpanWidth(width int) *SingleStatPanel {
 
 func (p *SingleStatPanel) SetFormat(format string) *SingleStatPanel {
 	p.Format = format
+	return p
+}
+
+func (p *SingleStatPanel) SetDecimals(decimal int) *SingleStatPanel {
+	if decimal < 0 {
+		decimal = 0
+	}
+	p.Decimals = decimal
 	return p
 }
