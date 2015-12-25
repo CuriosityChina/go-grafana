@@ -2,7 +2,7 @@ package grafana
 
 type Target struct {
 	Expr           string `json:"expr"`
-	Interval       string `json:"interval"`
+	Interval       int    `json:"interval"`
 	IntervalFactor int32  `json:"intervalFactor"`
 	LegendFormat   string `json:"legendFormat"`
 	Metric         string `json:"metric"`
@@ -11,7 +11,6 @@ type Target struct {
 
 func NewTarget(expr, legendFormat, metric, refID string) Target {
 	var t Target
-	t.Interval = ""
 	t.IntervalFactor = 1
 	t.Expr = expr
 	t.LegendFormat = legendFormat

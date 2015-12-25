@@ -56,7 +56,7 @@ func NewDefaultDashBoard() *Dashboard {
 	d.SharedCrosshair = false
 	d.Editable = true
 	d.Refresh = "30s"
-	d.Time = NewTime("now-6h", "now")
+	d.Time = NewTime("now-24h", "now")
 	d.Timepicker = NewDefaultTimepicker()
 	return d
 }

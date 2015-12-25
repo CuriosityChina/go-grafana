@@ -5,7 +5,7 @@ type SingleStatPanel struct {
 	ColorBackground bool          `json:"colorBackground,omitempty"`
 	ColorValue      bool          `json:"colorValue,omitempty"`
 	Colors          []string      `json:"colors,omitempty"`
-	Datasource      interface{}   `json:"datasource"`
+	Datasource      string        `json:"datasource,omitempty"`
 	Editable        bool          `json:"editable"`
 	Error           bool          `json:"error"`
 	Decimals        int           `json:"decimals"`
@@ -16,7 +16,7 @@ type SingleStatPanel struct {
 	Links           []interface{} `json:"links,omitempty"`
 	MaxDataPoints   int           `json:"maxDataPoints"`
 	NullPointMode   string        `json:"nullPointMode"`
-	NullText        interface{}   `json:"nullText"`
+	NullText        string        `json:"nullText,omitempty"`
 	Postfix         string        `json:"postfix"`
 	PostfixFontSize string        `json:"postfixFontSize"`
 	Prefix          string        `json:"prefix"`
@@ -53,7 +53,7 @@ func NewDefaultValueMap() ValueMap {
 
 func NewSingleStatPanel(title string) SingleStatPanel {
 	var p SingleStatPanel
-	p.Type = "signlestat"
+	p.Type = "singlestat"
 	vm := NewDefaultValueMap()
 	p.ValueMaps = append(p.ValueMaps, vm)
 	p.Title = title
